@@ -15,7 +15,7 @@ public class WebullLoginTest : IClassFixture<LoginPortalO>
     }
 
     [Fact]
-    public void LoginPortalCaseTest()
+    public void LoginPortalTest()
     {
         _loginPortal.Login();
     }

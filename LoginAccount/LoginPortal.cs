@@ -18,8 +18,9 @@ public class LoginPortalO : IDisposable
         string logInEmail = "grantanthony852@gmail.com";
         string logInPassword = "Mark589!";
         if (loginStartInd) {
-            Driver.Navigate().GoToUrl("https://www.webull.com");
+             Driver.Navigate().GoToUrl("https://www.webull.com");
         }
+        //Thread.Sleep(1500);
         IWebElement logInAccount = Driver.FindElement(By.XPath("//div[@id='app']//button/*[contains(text(),'Log in')]"));
         logInAccount.Click();
         IWebElement emailLoginButton = Driver.FindElement(By.XPath("//div[@id='app']//*[contains(text(),'Email Login')]"));

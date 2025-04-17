@@ -2,9 +2,7 @@ using System.Net;
 using System.Text.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Conversions;
-using LoginPortal;
-
+using Conversions; 
 
 namespace WebullAppWatch;
 
@@ -12,9 +10,9 @@ public class AppWatchO : IDisposable
 {
     public IWebDriver Driver;
     ConversionsO conversions = new ConversionsO();
-    LoginPortalO _login = new LoginPortalO();
+    //LoginPortalO _login = new LoginPortalO();
 
-    public AppWatchO()  
+    public AppWatchO()
     {
         Driver = new ChromeDriver("C:\\Repos\\Csharp testing beginning\\driver\\chromedriver-win32\\chromedriver-win32");
     }
@@ -25,9 +23,11 @@ public class AppWatchO : IDisposable
     
     //method get's the endpoint from alphavantage, downloads a json file that has yesterday's NASDAQ opening price
     //this file is eventually converted to a csv file that is saved to your PC in this repo's WebullHomePage directory
-    public string GetNasdaqDailyStockReportCsvFile(){
+    public string GetNasdaqDailyStockReportCsvFile()
+    {
             Uri queryUri = new Uri(QUERY_URL);
-            using (WebClient client = new WebClient()) {//Selenium is not engineered for API testing, the Driver above is for UI testing below
+            using (WebClient client = new WebClient())    //Selenium is not engineered for API testing, the Driver above is for UI testing shown below
+            {
                 dynamic NasdaqAPIjson = JsonSerializer.Deserialize<Dictionary<string, dynamic>>(client.DownloadString(queryUri));
                 string jsonString = JsonSerializer.Serialize(NasdaqAPIjson);
                 string cleanCsvPath = csvPath.Remove(csvPath.IndexOf(csvPathDel),csvPathDel.Length);
@@ -37,18 +37,9 @@ public class AppWatchO : IDisposable
         }
     }
 
-    public void navigateToWatchlistsFromAccount(){
-        _login.Login();
-    }
-
-    public void navigateToWatchlistsFromHome(){
-        
-    }
-
     public void Dispose()
     {
         Driver.Quit();
         Driver.Dispose();
     }   
 }
-

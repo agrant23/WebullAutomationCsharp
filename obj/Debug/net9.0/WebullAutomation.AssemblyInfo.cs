@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebullAutomation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a38b84c8e449958afed594b5816799a953b30380")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebullAutomation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebullAutomation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

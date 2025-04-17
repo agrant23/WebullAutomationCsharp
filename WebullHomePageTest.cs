@@ -17,7 +17,7 @@ public class HomePageTest : IClassFixture<WebullHomePageO>
     [Fact]
     public void TestName2()
     {
-        Console.WriteLine("Console 1");
+        Console.WriteLine("TestName2 HomePage Test");
         _homePage.Home();
     }
     // [Fact]

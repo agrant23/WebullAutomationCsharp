@@ -14,22 +14,21 @@ public class AppWatchTestO : IClassFixture<AppWatchO>
     }
 
     CsvFileUtilitiesO csvFileUtility = new CsvFileUtilitiesO();
+
     [Fact]
-    public void TestName2()
+    public void TestName4()
     {
-        Console.WriteLine("AppWatch Test 2");
         string nasdaqFilePath = _appWatch.GetNasdaqDailyStockReportCsvFile();
         Thread.Sleep(3000);
         string[] lines = File.ReadAllLines(nasdaqFilePath);
         string nasdaqOpeningPrice = csvFileUtility.SearchCsvFileCells(nasdaqFilePath, "US/Eastern"); 
         //the most recent Nasdaq opening price is next to the cell "US/Eastern", this method locates that record
         Console.WriteLine(nasdaqOpeningPrice);
-        Console.WriteLine("The End");
     }
 
-    [Fact]
-     public void TestName3()
-    {
-        _appWatch.navigateToWatchlistsFromAccount();
-    }
+    // [Fact]
+    //  public void TestName5()
+    // {
+    //     _appWatch.navigateWatchlists();
+    // }
 }

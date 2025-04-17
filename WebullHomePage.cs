@@ -5,8 +5,8 @@ namespace WebullHomePage;
 
 public class WebullHomePageO : IDisposable
 {
-    public IWebDriver Driver;
-    public WebullHomePageO()  
+    private IWebDriver Driver;
+    public WebullHomePageO()
     {
         Driver = new ChromeDriver("C:\\Repos\\Csharp testing beginning\\driver\\chromedriver-win32\\chromedriver-win32");
     }
